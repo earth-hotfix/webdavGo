@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  webdav:
+    build: ./
+    ports:
+      - your_port:8080 # webdav access port
+    restart: unless-stopped
+    volumes:
+      - your_directory:/webdav_files #
+    environment:
+      UPLOAD_RATE_LIMIT: 1024 # upload speed limit:bit, example:1024=1kb/s
